@@ -1,0 +1,74 @@
+/* Global */
+*{
+	font-family: "Noto Sans JP", "Open Sans";
+	color: #A09C97;
+}
+
+body{
+	background: transparent;
+}
+
+a{
+	color: #303234;
+	font-weight: bold;
+	text-decoration: none;
+}
+
+a:hover{
+	text-decoration: underline;
+}
+
+/* Screen */
+.back *{
+	font-family: "Noto Serif JP", "Times New Roman", "Open Serif";
+}
+
+.btn-show-list{
+	background: #000000;
+}
+
+.item-text{
+	text-shadow: #000000 2px 2px 4px;
+}
+
+/* List */
+.list *{
+	font-family: "Noto Serif JP", "Times New Roman", "Open Serif";
+}
+
+.list:hover #btn-close-list{
+	opacity: 1;
+}
+
+#btn-close-list{
+	fill: #FFFFFF;
+	opacity: 0;
+}
+
+#btn-close-list:hover{
+	background: transparent;
+}
+
+/* Preferences Dialogue */
+.dialogue-pref{
+	background: #00000010;
+}
+
+.dialogue-pref[open]{
+	animation: fade 1s ease;
+	animation-fill-mode: backwards;
+}
+
+.dialogue-base{
+	background: #FFFFFF;
+}
+
+@keyframes fade{
+	0%{
+		opacity: 0;
+	}
+
+	100%{
+		opacity: 1;
+	}
+}
