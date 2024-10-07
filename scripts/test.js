@@ -30,5 +30,6 @@ function createNewItem(songdata){
 }
 
 window.addEventListener("load", function(){
-	this.window.globalThis.data = new SongList();
+	window.globalThis.data = new SongList();
+	window.globalThis.listMain.appendChild(createAddItem());
 });
