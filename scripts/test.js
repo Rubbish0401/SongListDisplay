@@ -4,7 +4,7 @@ import { SongList } from "https://rubbish0401.github.io/JavaScriptUtils/SongList
 function createAddItem(){
 	let back = document.createElement("div");
 	let img = document.createElement("img");
-	img.src = "https://rubbish.github.io/SongListDisplay/src/images/svg/plus_white.svg";
+	img.src = "https://rubbish0401.github.io/SongListDisplay/src/images/svg/plus_white.svg";
 
 	back.addEventListener("click", function(event){
 		let songdata = new SongData();
