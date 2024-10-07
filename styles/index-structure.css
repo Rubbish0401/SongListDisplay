@@ -46,7 +46,15 @@ body *{
 	opacity: 1;
 }
 
-.back:hover.list-hide .btn-show-list{
+.back:hover.list-hide .btn-show-list.left{
+	transform: translateX(-32px);
+}
+
+.back:hover.list-hide .btn-show-list.right{
+	transform: translateX(32px);
+}
+
+.back:hover.list-hide .btn-show-list:hover{
 	transform: translateX(0);
 }
 
@@ -59,8 +67,10 @@ body *{
 }
 
 .btn-show-list{
+	width: fit-content;
+	height: fit-content;
 	position: absolute;
-	top: calc(50% - 32px);
+	top: calc(20vh + 243px);
 
 	padding: 8px;
 
@@ -185,7 +195,7 @@ body *{
 #btn-close-list{
 	position: absolute;
 	left: 8px;
-	top: 243px;
+	top: 251px;
 	
 	transition: opacity 1s ease;
 }

@@ -70,14 +70,22 @@ function setPosition(pos) {
 
 async function getDataFromUrl(url) {
 	try {
-		let response = await fetch(url);
-		return response.json();
+		if (typeof url == "string") {
+			let response = await fetch(url);
+			if (response.ok) return response.json();
+			else throw new Error("No response");
+		} else {
+			throw new Error(`${url} is not a string`);
+		}
 	} catch (error) {
+		console.log(error.toString());
 		return null;
 	}
 }
 
 //
+
+// Modify Elements
 function buildList() {
 	// Initialise
 	while (listMain.children.length > 0) listMain.children[0].remove();
@@ -100,7 +108,7 @@ function buildList() {
 	}
 }
 
-function setListSide(side){
+function setListSide(side) {
 	side = Boolean(side);
 	listPane.classList.remove(`list-${side ? "left" : "right"}`);
 	listPane.classList.add(`list-${!side ? "left" : "right"}`);
@@ -108,21 +116,26 @@ function setListSide(side){
 	listSide = Number(side);
 }
 
-function toggleListSide(){
+function toggleListSide() {
 	listPane.classList.toggle("list-left");
 	listPane.classList.toggle("list-right");
 
 	listSide = Number(listPane.classList.contains("list-right"));
 }
 
-function setListVisible(bool){
-	if(bool) listPane.classList.remove("list-hide");
-	else listPane.classList.add("list-hide");
+function setListVisibility(bool) {
+	if (bool) {
+		back.classList.add("list-hide");
+		listPane.classList.remove("list-hide");
+	} else {
+		back.classList.add("list-hide");
+		listPane.classList.add("list-hide");
+	}
 
 	listVisibility = bool;
 }
 
-function toggleListVisibility(){
+function toggleListVisibility() {
 	back.classList.toggle("list-hide");
 	listPane.classList.toggle("list-hide");
 

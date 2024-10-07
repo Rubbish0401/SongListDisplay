@@ -27,20 +27,22 @@
 	<link rel="stylesheet" href="styles/index-structure.css">
 	<link rel="stylesheet" href="styles/index-face.css">
 
+	<!-- External Scripts -->
+
 	<!-- Scripts -->
+	<script src="scripts/test.js" type="module"></script>
 	<script src="scripts/index-header.js"></script>
 	<script src="scripts/index.js"></script>
-	<script src="https://rubbish0401.github.io/JavaScriptUtils/StringProcess.js"></script>
-	<script src="https://rubbish0401.github.io/JavaScriptUtils/Colour.js"></script>
 
 	<!-- Others -->
 	<link rel="icon" href="src/images/png/karaoke.png">
 	<title>
-
+		Song List Display
 	</title>
 </head>
 
 <body>
+	<!-- Main Part -->
 	<div id="back" class="back">
 		<div class="main-item">
 			<span id="current-title" class="main-title item-text"></span>
@@ -69,6 +71,7 @@
 		</div>
 	</div>
 
+	<!-- Floating List -->
 	<div id="list-pane" class="list list-left animation">
 		<div class="list-section-title">Current</div>
 		<div class="list-top-section">
@@ -84,6 +87,7 @@
 		<img id="btn-close-list" class="img-btn" src="src/images/svg/close_white.svg">
 	</div>
 
+	<!-- Preferences Dialogue -->
 	<dialog id="dialogue-pref" class="dialogue-pref">
 		<div id="dialogue-base" class="dialogue-base">
 			<label for="input-pref-url">
@@ -93,7 +97,7 @@
 
 			<br>
 
-			<input id="input-pref" type="file" accept="application/json" style="display: none">
+			<input id="input-pref" type="file" accept="application/json">
 		</div>
 	</dialog>
 </body>

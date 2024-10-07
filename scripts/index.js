@@ -42,17 +42,17 @@ document.addEventListener("DOMContentLoaded", async function (root_event) {
 	}
 
 	// Custom
-	leftListBtn.addEventListener("click", function(event){
+	leftListBtn.addEventListener("click", function (event) {
 		listPane.classList.remove("animation");
 		setListSide(0);
-		
+
 		setTimeout(() => {
 			listPane.classList.add("animation");
 			toggleListVisibility();
 		}, 0);
 	});
 
-	rightListBtn.addEventListener("click", function(event){
+	rightListBtn.addEventListener("click", function (event) {
 		listPane.classList.remove("animation");
 		setListSide(1);
 
@@ -73,8 +73,9 @@ document.addEventListener("DOMContentLoaded", async function (root_event) {
 	prefInput.addEventListener("change", async function (event) {
 		if (event.target.files.length == 0) alert("File not selected");
 		else {
-			let data = JSON.parse(await event.target.files[0].text());
-			console.log(data);
+			data = JSON.parse(await event.target.files[0].text());
+			buildList();
+			setPosition(data["startAt"]);
 		}
 	});
 
@@ -90,7 +91,8 @@ document.addEventListener("DOMContentLoaded", async function (root_event) {
 	prevItem.addEventListener("click", event => setPosition(currentPos - 1));
 	nextItem.addEventListener("click", event => setPosition(currentPos + 1));
 
-	listCloseBtn.addEventListener("click", event => toggleListVisibility());
+	listPane.addEventListener("click", event => setListVisibility(false));
+	for (child of listPane.children) if (child != listCloseBtn) child.addEventListener("click", event => event.stopPropagation());
 
 	// Global
 
