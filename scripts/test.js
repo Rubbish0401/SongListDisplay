@@ -1,8 +1,34 @@
+import { SongData } from "https://rubbish0401.github.io/JavaScriptUtils/SongListDisplay/SongData.mjs";
 import { SongList } from "https://rubbish0401.github.io/JavaScriptUtils/SongListDisplay/SongList.mjs";
 
-let a = new SongData({
-	"title": "test test test",
-	"descriptions": "test song",
-	"creators": [],
+function createAddItem(){
+	let back = document.createElement("div");
+	let img = document.createElement("img");
+	img.src = "/src/images/svg/plus_white.svg";
+
+	back.addEventListener("click", function(event){
+		let songdata = new SongData();
+		let pos = [...back.parentElement.children].indexOf(back);
+
+		let newItem = createNewItem(songdata);
+		let newAddItem = createAddItem();
+
+		window.globalThis.data.addSongData(pos, songdata);
+		back.after(newItem);
+		newItem.after(newAddItem);
+	});
+
+	back.appendChild(img);
+
+	return back;
+}
+
+function createNewItem(songdata){
+	let back = document.createElement("div");
+
+	return back;
+}
+
+window.addEventListener("load", function(){
+	this.window.globalThis.data = new SongList();
 });
-console.log(a);
