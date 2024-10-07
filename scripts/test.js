@@ -6,3 +6,4 @@ let a = new SongData({
 	"descriptions": "test song",
 	"creators": [],
 });
+console.log(a);
