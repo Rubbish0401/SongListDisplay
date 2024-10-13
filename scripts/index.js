@@ -1,24 +1,11 @@
-document.addEventListener("DOMContentLoaded", async function (root_event) {
+document.addEventListener("DOMContentLoaded", function (root_event) {
 	// Starting
-	let url = new URL(location.href);
-	let params = url.searchParams;
-	if (params.has("dataFrom")) {
-		let _data = await getDataFromUrl(params.get("dataFrom"));
-		data = _data;
-	}
 
 	// Get Elements
 	back = document.getElementById("back");
 
 	leftListBtn = document.getElementById("btn-list-left");
 	rightListBtn = document.getElementById("btn-list-right");
-
-	prefBtn = document.getElementById("btn-pref");
-	prefDialogue = document.getElementById("dialogue-pref");
-	prefBase = document.getElementById("dialogue-base");
-
-	prefURLInput = document.getElementById("input-pref-url");
-	prefInput = document.getElementById("input-pref");
 
 	currentTitle = document.getElementById("current-title");
 	currentDescription = document.getElementById("current-description");
@@ -31,15 +18,19 @@ document.addEventListener("DOMContentLoaded", async function (root_event) {
 
 	listPane = document.getElementById("list-pane");
 	listMainBack = document.getElementById("list-main-back");
-	listMain = document.getElementById("list-main");
 	listCurrentItem = document.getElementById("list-current-item");
 	listCloseBtn = document.getElementById("btn-close-list");
 
+	currentLeftBtn = document.getElementById("btn-current-left");
+	currentRightBtn = document.getElementById("btn-current-right");
+
+	playPauseBtn = document.getElementById("btn-play-pause");
+	uploadBtn = document.getElementById("btn-upload");
+	downloadBtn = document.getElementById("btn-download");
+	saveBtn = document.getElementById("btn-save");
+	removeBtn = document.getElementById("btn-remove");
+
 	//List
-	if (data) {
-		buildList();
-		setPosition(data["startAt"]);
-	}
 
 	// Custom
 	leftListBtn.addEventListener("click", function (event) {
@@ -62,34 +53,7 @@ document.addEventListener("DOMContentLoaded", async function (root_event) {
 		}, 0);
 	});
 
-	prefBtn.addEventListener("click", function (event) {
-		prefDialogue.showModal();
-	});
-
-	prefDialogue.addEventListener("click", function (event) {
-		if (event.target == prefDialogue) prefDialogue.close();
-	});
-
-	prefInput.addEventListener("change", async function (event) {
-		if (event.target.files.length == 0) alert("File not selected");
-		else {
-			data = JSON.parse(await event.target.files[0].text());
-			buildList();
-			setPosition(data["startAt"]);
-		}
-	});
-
-	prefURLInput.addEventListener("change", function (event) {
-		if (event.target.value.length > 0) {
-			let url = new URL(location.href);
-			url.searchParams.set("dataFrom", event.target.value);
-
-			location.href = url.toString();
-		}
-	});
-
-	prevItem.addEventListener("click", event => setPosition(currentPos - 1));
-	nextItem.addEventListener("click", event => setPosition(currentPos + 1));
+	// List
 
 	listPane.addEventListener("click", event => setListVisibility(false));
 	for (child of listPane.children) if (child != listCloseBtn) child.addEventListener("click", event => event.stopPropagation());

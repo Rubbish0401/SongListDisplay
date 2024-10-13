@@ -29,6 +29,12 @@ body *{
 	touch-action: auto;
 }
 
+input[type="url"]{
+	background: transparent;
+	border: none;
+	outline: none;
+}
+
 /* Screen */
 .back{
 	width: 100%;
@@ -99,26 +105,8 @@ body *{
 	transform: translateX(0);
 }
 
-/* Preference Dialogue */
-#btn-pref{
-	position: fixed;
-	top: 8px;
-	right: 8px;
-
-	opacity: 0;
-	transition: opacity 1s ease-in;
-}
-
-.dialogue-pref{
-	width: 80%;
-	height: 80%;
-
-	margin: auto;
-}
-
-.dialogue-base{
-	width: 100%;
-	height: 100%;
+.main-item, .main-item *, .sub-container, .sub-container *{
+	overflow: visible;
 }
 
 /* Main */
@@ -188,139 +176,4 @@ body *{
 .sub-title, .sub-description{
 	text-wrap: nowrap;
 	white-space: nowrap;
-}
-
-/* List */
-
-#btn-close-list{
-	position: absolute;
-	left: 8px;
-	top: 251px;
-	
-	transition: opacity 1s ease;
-}
-
-.list{
-	width: 400px;
-	height: 550px;
-	position: fixed;
-	top: 20vh;
-
-	padding: 8px 8px 8px 64px;
-	text-wrap: nowrap;
-
-	transform: translateX(0);
-	background: #00000080;
-}
-
-.list.animation{
-	transition: transform 1s ease;
-}
-
-.list-left{
-	left: 0;
-}
-
-.list-left.list-hide{
-	transform: translateX(-100%);
-}
-
-.list-right{
-	right: 0;
-}
-
-.list-right.list-hide{
-	transform: translateX(100%);
-}
-
-.list-section-title{
-	width: 100%;
-	height: fit-content;
-
-	font-size: 0.75em;
-	color: white;
-
-	border-bottom: #FFFFFF solid 1.5px;
-}
-
-.list-main-section{
-	width: 100%;
-	height: calc(100% - 4em - 32px);
-}
-
-.list-scroller{
-	width: 100%;
-	height: fit-content;
-	min-height: 100%;
-}
-
-.list-item{
-	width: fit-content;
-	height: fit-content;
-
-	display: block;
-	color: white;
-	font-size: 2em;
-	overflow-x: auto;
-	white-space: nowrap;
-}
-
-.list-top-item{
-	font-size: 2.5em;
-}
-
-.text-loop{
-	animation: 20s linear -5s text-loop infinite;
-}
-
-.vertical-loop{
-	animation: 60s linear -15s vertical-loop infinite;
-}
-
-@keyframes text-loop{
-	0% {
-		transform: translateX(100%);
-	}
-
-	25% {
-		transform: translateX(0);
-	}
-
-
-	50% {
-		transform: translateX(0);
-	}
-
-	75% {
-		transform: translateX(0);
-	}
-
-
-	100% {
-		transform: translateX(-100%);
-	}
-}
-
-@keyframes vertical-loop{
-	0% {
-		transform: translateY(100%);
-	}
-
-	25% {
-		transform: translateY(0);
-	}
-
-
-	50% {
-		transform: translateY(0);
-	}
-
-	75% {
-		transform: translateY(0);
-	}
-
-
-	100% {
-		transform: translateY(-100%);
-	}
 }

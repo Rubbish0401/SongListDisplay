@@ -1,0 +1,258 @@
+#btn-close-list{
+	position: absolute;
+	left: 8px;
+	top: 251px;
+	
+	transition: opacity 1s ease;
+}
+
+.list{
+	width: 400px;
+	height: 550px;
+	position: fixed;
+	top: 20vh;
+
+	padding: 0px 0px 0px 64px;
+	text-wrap: nowrap;
+
+	transform: translateX(0);
+}
+
+.list.animation{
+	transition: transform 1s ease;
+}
+
+.list-left{
+	left: 0;
+}
+
+.list-left.list-hide{
+	transform: translateX(-100%);
+}
+
+.list-right{
+	right: 0;
+}
+
+.list-right.list-hide{
+	transform: translateX(100%);
+}
+
+.list-container{
+	width: 100%;
+	height: 100%;
+
+	padding: 8px 8px 8px 0px;
+}
+
+/* List */
+
+.list-section-title-bar{
+	width: 100%;
+	height: 24px;
+
+	display: flex;
+	flex-flow: row nowrap;
+	justify-content: flex-start;
+	align-items: center;
+}
+
+.list-section-title{
+	width: fit-content;
+	height: fit-content;
+
+	font-size: 18px;
+	line-height: 23px;
+}
+
+.list-section-title.first{
+	width: calc(100% - 48px);
+}
+
+.list-section-title.second{
+	width: calc(100% - 120px);
+}
+
+.list-section-title-bar-btn{
+	width: 23px;
+	height: 23px;
+
+	padding: 3.5px;
+}
+
+.list-main-section{
+	width: 100%;
+	height: calc(100% - 112px);
+
+	overflow-y: auto;
+	scroll-snap-type: y mandatory;
+}
+
+/* List Duplicated Item */
+
+.list-item-common{
+	width: 100%;
+	height: fit-content;
+
+	display: block;
+	overflow-x: auto;
+	white-space: nowrap;
+}
+
+.list-item-top-label{
+	width: 100%;
+	height: 64px;
+
+	display: block;
+
+	font-size: 40px;
+	line-height: 64px;
+	text-align: left;
+	vertical-align: middle;
+}
+
+.item-adder{
+	scroll-snap-align: start;
+	scroll-snap-stop: normal;
+}
+
+.item-adder{
+	display: flex;
+	flex-wrap: nowrap;
+	justify-content: center;
+	align-items: center;
+
+	padding: 2px;
+}
+
+.item-adder:hover .item-adder-icon{
+	height: 24px;
+}
+
+.item-adder-icon{
+	width: fit-content;
+	height: 0;
+	
+	transition: height 0.5s;
+}
+
+.list-item-main{
+	height: 0px;
+
+	display: flex;
+	flex-flow: row nowrap;
+	justify-content: start;
+	align-items: center;
+
+	transform: translateX(100%);
+	transition: transform 0.3s 0.3s, height 0.3s;
+}
+
+.list-item-main.shown{
+	height: 64px;
+	transform: translateX(0);
+}
+
+.list-item-main:hover .list-item-edit-btn{
+	opacity: 1;
+}
+
+.list-item-main.selected{
+	filter: drop-shadow(0px 0px 1px #FFFFFF);
+}
+
+.list-item-text{
+	width: calc(100% - 40px);
+	height: 64px;
+
+	display: flex;
+	flex-flow: column nowrap;
+	justify-content: flex-start;
+	align-items: flex-start;
+}
+
+.list-item-label{
+	width: 100%;
+	height: 40px;
+
+	font-size: 28px;
+	text-align: left;
+	vertical-align: middle;
+	line-height: 40px;
+}
+
+.list-item-descriptions{
+	width: 100%;
+	height: 24px;
+
+	font-size: 14px;
+	text-align: left;
+	vertical-align: middle;
+	line-height: 24px;
+}
+
+.list-item-edit-btn{
+	width: 40px;
+	height: 64px;
+
+	padding: 16px 8px;
+
+	opacity: 0;
+	transition: opacity 1s, transform 0.5s;
+}
+
+.text-loop{
+	animation: 20s linear -5s text-loop infinite;
+}
+
+.vertical-loop{
+	animation: 60s linear -15s vertical-loop infinite;
+}
+
+@keyframes text-loop{
+	0% {
+		transform: translateX(100%);
+	}
+
+	25% {
+		transform: translateX(0);
+	}
+
+
+	50% {
+		transform: translateX(0);
+	}
+
+	75% {
+		transform: translateX(0);
+	}
+
+
+	100% {
+		transform: translateX(-100%);
+	}
+}
+
+@keyframes vertical-loop{
+	0% {
+		transform: translateY(100%);
+	}
+
+	25% {
+		transform: translateY(0);
+	}
+
+
+	50% {
+		transform: translateY(0);
+	}
+
+	75% {
+		transform: translateY(0);
+	}
+
+
+	100% {
+		transform: translateY(-100%);
+	}
+}

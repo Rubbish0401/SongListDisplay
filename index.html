@@ -25,14 +25,17 @@
 	<!-- Stylesheets -->
 	<link rel="stylesheet" href="styles/components.css">
 	<link rel="stylesheet" href="styles/index-structure.css">
+	<link rel="stylesheet" href="styles/list-structure.css">
 	<link rel="stylesheet" href="styles/index-face.css">
+	<link rel="stylesheet" href="styles/list-face.css">
 
 	<!-- External Scripts -->
 
 	<!-- Scripts -->
 	<script src="scripts/index-header.js"></script>
+	<script src="scripts/save-load.mjs" type="module"></script>
 	<script src="scripts/index.js"></script>
-	<script src="https://rubbish0401.github.io/SongListDisplay/scripts/test.js" type="module"></script>
+	<script src="scripts/items.js" type="module"></script>
 
 	<!-- Others -->
 	<link rel="icon" href="src/images/png/karaoke.png">
@@ -48,7 +51,7 @@
 			<span id="current-title" class="main-title item-text"></span>
 			<span id="current-description" class="main-description item-text"></span>
 		</div>
-	
+
 		<div class="sub-container item-text">
 			<div id="prev-item" class="sub-item sub-left">
 				<span id="prev-title" class="sub-title item-text"></span>
@@ -60,46 +63,52 @@
 			</div>
 		</div>
 
-		<img id="btn-pref" class="img-btn" src="src/images/svg/setting.svg" />
-
 		<div id="btn-list-left" class="btn-show-list left">
-			<img id="" class="img-btn" src="src/images/svg/right_white.svg">
+			<img id="" class="img-btn" src="src/images/svg/double_right_white.svg">
 		</div>
-	
+
 		<div id="btn-list-right" class="btn-show-list right">
-			<img id="" class="img-btn" src="src/images/svg/left_white.svg">
+			<img id="" class="img-btn" src="src/images/svg/double_left_white.svg">
 		</div>
 	</div>
 
 	<!-- Floating List -->
 	<div id="list-pane" class="list list-left animation">
-		<div class="list-section-title">Current</div>
-		<div class="list-top-section">
-			<div id="list-current-item" class="list-item list-top-item"></div>
-		</div>
+		<div class="list-container">
+			<div class="list-section-title-bar">
+				<span class="list-section-title first">
+					Current
+				</span>
 
-		
-		<div class="list-section-title">List</div>
-		<div id="list-main-back" class="list-main-section">
-			<div id="list-main" class="list-scroller"></div>
+				<img id="btn-current-left" class="list-section-title-bar-btn" src="src/images/svg/left_white.svg"
+					title="Previous">
+				<img id="btn-current-right" class="list-section-title-bar-btn" src="src/images/svg/right_white.svg"
+					title="Next">
+			</div>
+			<div class="list-top-section">
+				<div class="list-item-common">
+					<span id="list-current-item" class="list-item-top-label"></span>
+				</div>
+			</div>
+
+
+			<div class="list-section-title-bar">
+				<span class="list-section-title second">
+					List
+				</span>
+				<img id="btn-play-pause" class="list-section-title-bar-btn" src="src/images/svg/play_white.svg">
+				<img id="btn-upload" class="list-section-title-bar-btn" src="src/images/svg/upload_white.svg" title="Upload">
+				<img id="btn-download" class="list-section-title-bar-btn" src="src/images/svg/download_white.svg" title="Download">
+				<img id="btn-save" class="list-section-title-bar-btn" src="src/images/svg/save_white.svg" title="Save">
+				<img id="btn-remove" class="list-section-title-bar-btn" src="src/images/svg/delete_white.svg" title="Remove All">
+			</div>
+			<div id="list-main-back" class="list-main-section">
+
+			</div>
 		</div>
 
 		<img id="btn-close-list" class="img-btn" src="src/images/svg/close_white.svg">
 	</div>
-
-	<!-- Preferences Dialogue -->
-	<dialog id="dialogue-pref" class="dialogue-pref">
-		<div id="dialogue-base" class="dialogue-base">
-			<label for="input-pref-url">
-				URL
-			</label>
-			<input id="input-pref-url" type="url" placeholder="JSON's URL">
-
-			<br>
-
-			<input id="input-pref" type="file" accept="application/json">
-		</div>
-	</dialog>
 </body>
 
 </html>

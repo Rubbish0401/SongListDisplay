@@ -48,27 +48,3 @@ a:hover{
 #btn-close-list:hover{
 	background: transparent;
 }
-
-/* Preferences Dialogue */
-.dialogue-pref{
-	background: #00000010;
-}
-
-.dialogue-pref[open]{
-	animation: fade 1s ease;
-	animation-fill-mode: backwards;
-}
-
-.dialogue-base{
-	background: #FFFFFF;
-}
-
-@keyframes fade{
-	0%{
-		opacity: 0;
-	}
-
-	100%{
-		opacity: 1;
-	}
-}
