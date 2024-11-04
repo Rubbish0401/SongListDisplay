@@ -1,0 +1,6 @@
+.floating-btn{
+	background: #3F51B5;
+	border-radius: 50%;
+
+	filter: drop-shadow(4px 4px 4px #00000080);
+}

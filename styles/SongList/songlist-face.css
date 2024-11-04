@@ -1,0 +1,49 @@
+.songlist{
+	font-family: "Noto Serif JP", "Times New Roman";
+}
+
+/*  */
+.songlist.list-back{
+	background: #00000080;
+}
+
+/*  */
+.songlist.section-label{
+	font-size: 12px;
+	font-family: 'Times New Roman', Times, serif;
+	text-align: left;
+	vertical-align: middle;
+
+	color: #FFFFFF;
+
+	border-color: #FFFFFF;
+	border-style: solid;
+}
+
+.songlist.title-label{
+	font-size: 40px;
+	color: #FFFFFF;
+	text-align: left;
+	vertical-align: middle;
+
+	white-space: nowrap;
+}
+
+/* List Item */
+.songlist.list-item.main-label{
+	font-size: 28px;
+	color: #FFFFFF;
+	text-align: left;
+	vertical-align: middle;
+
+	white-space: nowrap;
+}
+
+.songlist.list-item.sub-label{
+	font-size: 18px;
+	color: #FFFFFF;
+	text-align: left;
+	vertical-align: middle;
+
+	white-space: nowrap;
+}
