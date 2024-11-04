@@ -1,14 +1,7 @@
 import { songlist } from "../data-process/data-process.mjs";
 import { createListView } from "../SongList/SongListView.mjs";
 
-import sampleJson from "../../data/sample.json" with { type: "json" };
-
-const ID_LISTVIEW = "songlist";
-
 document.addEventListener("DOMContentLoaded", root_event => {
-	//
-	songlist.importObject(sampleJson);
-
 	// Get Elements
 	back = document.getElementById("back");
 	captureBtn = document.getElementById("capture-btn");
@@ -54,7 +47,6 @@ document.addEventListener("DOMContentLoaded", root_event => {
 
 					listview = createListView(songlist);
 					listview.classList.add("screenshot");
-					listview.id = ID_LISTVIEW;
 					back.insertBefore(listview, captureBtn);
 				});
 

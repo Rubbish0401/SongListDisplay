@@ -1,4 +1,5 @@
 {
+	"name": "Sample Songs",
 	"startAt": 9,
 	"list": [
 		{ "title": "Song 0", "descriptions": "This is the song 0" },
